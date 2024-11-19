@@ -1,0 +1,36 @@
+name: Build and Upload Artifacts
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    # Checkout the repository
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    # Set up the necessary build environment (for example, Node.js, Python, etc.)
+    - name: Set up Node.js  # If using Node.js; change this for your environment
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+
+    # Install dependencies
+    - name: Install dependencies
+      run: npm install  # Adjust for your project (npm, pip, etc.)
+
+    # Build the project (you can adjust this to whatever your build process is)
+    - name: Build the project
+      run: npm run build  # Replace with your actual build command
+
+    # Upload the build artifacts to GitHub
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: build-artifacts      # Artifact name (e.g., "build-artifacts")
+        path: ./dist               # Path to your build output (adjust as needed)
