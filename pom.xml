@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  
+
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
@@ -12,10 +12,9 @@
 
     <name>Simple Java Application</name>
 
-    <!-- Set Java version to 17 (or any desired version) -->
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>  <!-- Change this as per your JDK -->
-        <maven.compiler.target>17</maven.compiler.target>  <!-- Change this as per your JDK -->
+        <maven.compiler.source>17</maven.compiler.source>  <!-- Use Java 17 -->
+        <maven.compiler.target>17</maven.compiler.target>  <!-- Use Java 17 -->
     </properties>
 
     <dependencies>
@@ -24,17 +23,18 @@
 
     <build>
         <plugins>
+            <!-- Maven JAR Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.1.0</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                <version>3.2.0</version> <!-- Make sure you use a recent version -->
+                <configuration>
+                    <archive>
+                        <manifestEntries>
+                            <Main-Class>com.example.App</Main-Class>  <!-- Set the main class -->
+                        </manifestEntries>
+                    </archive>
+                </configuration>
             </plugin>
         </plugins>
     </build>
