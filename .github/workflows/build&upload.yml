@@ -3,11 +3,11 @@ name: Build and Upload Artifacts (Java Maven)
 on:
   push:
     branches:
-      - main  # Trigger on push to the main branch (adjust as needed)
+      - main
 
 jobs:
   build:
-    runs-on: ubuntu-latest    # Use Ubuntu, but you can choose other OSes like windows-latest
+    runs-on: windows-latest
 
     steps:
     # Step 1: Checkout the repository
