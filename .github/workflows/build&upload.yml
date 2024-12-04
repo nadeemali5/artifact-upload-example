@@ -18,10 +18,10 @@ jobs:
     - name: Set up JDK 17
       uses: actions/setup-java@v2
       with:
-        java-version: '17'  # Adjust version if needed (e.g., '11', '8', etc.)
-        distribution: 'temurin'  # Adoptium is the new distribution for OpenJDK
+        java-version: '17'
+        distribution: 'temurin'
 
-    # Step 3: Cache Maven dependencies (optional but speeds up builds)
+    # Step 3: Cache Maven dependencies
     - name: Cache Maven dependencies
       uses: actions/cache@v2
       with:
