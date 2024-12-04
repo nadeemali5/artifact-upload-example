@@ -40,3 +40,4 @@ jobs:
       with:
         name: java-build-artifacts   # Artifact name
         path: target/*.jar           # Path to the generated JAR or other artifacts in the 'target' directory
+        ArtifactType: FilePath
